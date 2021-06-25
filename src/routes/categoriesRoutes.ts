@@ -1,26 +1,28 @@
 import { Router } from 'express';
-import { v4 as uuid } from 'uuid';
+import { Category } from '../model/Category';
 
 const categoriesRoutes = Router();
 
-const categories = [];
+const categories: Category[] = [];
 
 categoriesRoutes.post('/', (request, response) => {
   const { name, description } = request.body;
-  console.log(name, description);
+  const category = new Category();
 
-  const data = {
-    id: uuid(),
+  Object.assign(category, {
     name,
     description,
-  };
-  categories.push(data);
+    created_at: new Date(),
+    updated_at: new Date(),
+  });
+
+  categories.push(category);
 
   return response.status(201).json({
     error: false,
     message: 'Successfully created category!',
     code: 2001,
-    data,
+    category,
   });
 });
 
