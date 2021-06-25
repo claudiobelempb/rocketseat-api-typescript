@@ -2,7 +2,7 @@ import { ICreateSpecificationDTO } from '../dtos/ICreateSpecificationDTO';
 import { Specification } from '../model/Specification';
 import { ISpecificationsRepository } from './ISpecificationsRepository';
 
-class SpecificationsRepository implements ISpecificationsRepository {
+export class SpecificationsRepository implements ISpecificationsRepository {
   private specifications: Specification[];
 
   constructor() {
@@ -28,7 +28,9 @@ class SpecificationsRepository implements ISpecificationsRepository {
   }
 
   findByName(name: string): Specification {
-    const specificationNameExist = this.specifications.find(specification => specification.name === name);
+    const specificationNameExist = this.specifications.find(specification => {
+      return specification.name === name;
+    });
     return specificationNameExist;
   }
 
@@ -37,5 +39,3 @@ class SpecificationsRepository implements ISpecificationsRepository {
     return specificationIdExist;
   }
 }
-
-export { SpecificationsRepository };

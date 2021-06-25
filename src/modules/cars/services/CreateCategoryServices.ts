@@ -2,7 +2,7 @@ import { ICategoriesRepository } from '../repositories/ICategoriesRepository';
 import { ICreateCategoryDTO } from '../dtos/ICreateCategoryDTO';
 import { Category } from '../model/Category';
 
-class CreateCategoryServices {
+export class CreateCategoryServices {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
   execute({ name, description }: ICreateCategoryDTO): Category {
@@ -20,5 +20,3 @@ class CreateCategoryServices {
     return category;
   }
 }
-
-export { CreateCategoryServices };

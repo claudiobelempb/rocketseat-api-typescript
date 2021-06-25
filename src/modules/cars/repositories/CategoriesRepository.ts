@@ -2,7 +2,7 @@ import { ICategoriesRepository } from './ICategoriesRepository';
 import { ICreateCategoryDTO } from '../dtos/ICreateCategoryDTO';
 import { Category } from '../model/Category';
 
-class CategoriesRepository implements ICategoriesRepository {
+export class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
   constructor() {
@@ -40,5 +40,3 @@ class CategoriesRepository implements ICategoriesRepository {
     return categoryIdExist;
   }
 }
-
-export { CategoriesRepository };

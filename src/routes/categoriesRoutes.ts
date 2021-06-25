@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { CategoriesRepository } from '../modules/cars/repositories/CategoriesRepository';
 import { CreateCategoryServices } from '../modules/cars/services/CreateCategoryServices';
 
-const categoriesRoutes = Router();
+export const categoriesRoutes = Router();
 const categoriesRepository = new CategoriesRepository();
 const createCategoryServices = new CreateCategoryServices(categoriesRepository);
 
@@ -28,5 +28,3 @@ categoriesRoutes.post('/', (request, response) => {
     category,
   });
 });
-
-export { categoriesRoutes };
