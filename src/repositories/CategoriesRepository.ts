@@ -8,6 +8,11 @@ class CategoriesRepository {
     this.categories = [];
   }
 
+  index(): Category[] {
+    const categories = this.categories;
+    return categories;
+  }
+
   create({ name, description }: ICreateCategoryDTO): Category {
     const category = new Category();
 
