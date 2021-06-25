@@ -30,8 +30,10 @@ yarn add eslint-import-resolver-typescript -D
 yarn add express -S
 yarn add @types/express -D
 
-yarn add dotenv -S
 yarn add uuid -S
+yarn add @types/uuid -D
+
+yarn add dotenv -S
 yarn add mongodb -S
 yarn add mongoose -S
 yarn add yup -S
