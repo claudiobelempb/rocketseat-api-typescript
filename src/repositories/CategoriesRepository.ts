@@ -1,7 +1,8 @@
+import { ICategoriesRepository } from './ICategoriesRepository';
 import { ICreateCategoryDTO } from '../dtos/ICreateCategoryDTO';
 import { Category } from '../model/Category';
 
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
   constructor() {
@@ -30,8 +31,13 @@ class CategoriesRepository {
   }
 
   findByName(name: string): Category {
-    const categoryName = this.categories.find(category => category.name === name);
-    return categoryName;
+    const categoryNameExist = this.categories.find(category => category.name === name);
+    return categoryNameExist;
+  }
+
+  findById(id: string): Category {
+    const categoryIdExist = this.categories.find(category => category.id === id);
+    return categoryIdExist;
   }
 }
 
