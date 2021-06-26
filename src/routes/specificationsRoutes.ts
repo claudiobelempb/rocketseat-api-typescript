@@ -1,31 +1,14 @@
 import { Router } from 'express';
-import { SpecificationsRepository } from '../modules/cars/repositories/implementations/SpecificationsRepository';
-import { CreateSpecificationServices } from '../modules/cars/services/CreateSpecificationServices';
+
+import { createSpecificationController } from '../modules/cars/useCases/createSpecification';
+import { indexSpecificationController } from '../modules/cars/useCases/indexSpecification/intex';
 
 export const specificationsRoutes = Router();
 
-const specificationsRepository = new SpecificationsRepository();
-
 specificationsRoutes.get('/', (request, response) => {
-  const specifications = specificationsRepository.index();
-  return response.json({
-    error: false,
-    message: 'Successfully',
-    code: 2000,
-    specifications,
-  });
+  return indexSpecificationController.handle(request, response);
 });
 
 specificationsRoutes.post('/', (request, response) => {
-  const { name, description } = request.body;
-  const createSpecificationServices = new CreateSpecificationServices(specificationsRepository);
-
-  const specification = createSpecificationServices.execute({ name, description });
-
-  return response.status(201).json({
-    error: false,
-    message: 'Successfully created specification',
-    code: 2001,
-    specification,
-  });
+  return createSpecificationController.handle(request, response);
 });

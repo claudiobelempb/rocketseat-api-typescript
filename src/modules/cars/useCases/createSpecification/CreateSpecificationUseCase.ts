@@ -1,8 +1,8 @@
-import { ICreateSpecificationDTO } from '../dtos/ICreateSpecificationDTO';
-import { Specification } from '../model/Specification';
-import { ISpecificationsRepository } from '../repositories/ISpecificationsRepository';
+import { ICreateSpecificationDTO } from '../../dtos/ICreateSpecificationDTO';
+import { Specification } from '../../model/Specification';
+import { ISpecificationsRepository } from '../../repositories/ISpecificationsRepository';
 
-export class CreateSpecificationServices {
+export class CreateSpecificationUseCase {
   constructor(private specificationsRepository: ISpecificationsRepository) {}
 
   execute({ name, description }: ICreateSpecificationDTO): Specification {
@@ -11,7 +11,6 @@ export class CreateSpecificationServices {
       throw new Error('Specification name already exists!');
     }
     const specification = this.specificationsRepository.create({ name, description });
-
     return specification;
   }
 }
