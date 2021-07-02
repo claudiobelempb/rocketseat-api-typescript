@@ -7,5 +7,41 @@
     "contact": {
       "email": "dani@rocketseat.com.br"
     }
+  },
+  "paths": {
+    "/categories": {
+      "post": {
+        "tags": ["Categories"],
+        "summary": "create a category",
+        "description": "Create a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "name": "category name sample",
+                "description": "category description sample"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category already exists"
+          }
+        }
+      }
+    }
   }
 }
