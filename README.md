@@ -33,8 +33,14 @@
 - yarn add uuid -S
 - yarn add @types/uuid -D
 
+---
+
+- Upload Files
 - yarn add multer -S
 - yarn add @types/multer -D
+- yarn add csv-parse -S
+
+---
 
 - yarn add dotenv -S
 - yarn add mongodb -S
