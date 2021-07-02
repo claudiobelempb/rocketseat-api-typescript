@@ -42,6 +42,12 @@
 
 ---
 
+Document Api
+-yarn add swagger-ui-express -D
+-yarn add @types/swagger-ui-express -D
+
+---
+
 - yarn add dotenv -S
 - yarn add mongodb -S
 - yarn add mongoose -S
