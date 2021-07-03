@@ -48,6 +48,16 @@ Document Api
 
 ---
 
+Comandos docker Composer
+docker build -t rentx .
+docker ps
+docker run -p 3333:3333 rentx
+docker stop 164565db2168
+
+docker exec -it eloquent_mccarthy /bin/bash
+
+---
+
 - yarn add dotenv -S
 - yarn add mongodb -S
 - yarn add mongoose -S
