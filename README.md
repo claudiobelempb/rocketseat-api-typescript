@@ -3,7 +3,7 @@
 - yarn init -y
 - src/server.ts
 - yarn add typescript -D
-  -yarn tsc --init
+- yarn tsc --init
 - "outDir": "./dist",
 - yarn tsc
 - yarn add ts-node-dev -D
@@ -35,28 +35,55 @@
 
 ---
 
-- Upload Files
+# Upload Files
+
 - yarn add multer -S
 - yarn add @types/multer -D
 - yarn add csv-parse -S
 
 ---
 
-Document Api
+# Document Api
+
 -yarn add swagger-ui-express -D
 -yarn add @types/swagger-ui-express -D
 
----
+# node
 
-Comandos docker Composer
-docker build -t rentx .
-docker ps
-docker run -p 3333:3333 rentx
-docker stop 164565db2168
+-pkill node
 
-docker exec -it eloquent_mccarthy /bin/bash
+# Comandos docker
 
----
+-docker version
+-docker build -t rentx .
+-docker ps
+-docker ps -a
+-docker run -p 3333:3333 rentx
+-docker start rentx
+-docker stop rentx
+-docker rm rentx
+-docker logs rentx -f
+
+-docker exec -it eloquent_mccarthy /bin/bash
+
+# Comandos docker Composer
+
+-docker-compose --version
+-docker-compose up
+
+<!-- ficar sempre executando -->
+
+-docker-compose up -d
+
+# Typeorm
+
+- yarn add typeorm reflect-metadata -S
+- yarn add pg -S
+<!-- active config no tsconfig.js -->
+- "experimentalDecorators": true /_ Enables experimental support for ES7 decorators. _/,
+- "emitDecoratorMetadata": true /_ Enables experimental support for emitting type metadata for decorators. _/,
+
+# Dependence
 
 - yarn add dotenv -S
 - yarn add mongodb -S
