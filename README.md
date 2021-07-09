@@ -86,6 +86,7 @@
 
 # Typeorm
 
+- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 - yarn add typeorm reflect-metadata -S
 - yarn add pg -S
 <!-- active config no tsconfig.js -->
