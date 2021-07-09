@@ -65,15 +65,24 @@
 -docker logs rentx -f
 
 -docker exec -it eloquent_mccarthy /bin/bash
+-docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx
+
+- docker volume ls
+- docker volume rm <volume_name> <volume_name>
+- docker rm -v database_rentx
+- docker-compose down -v --rmi local
 
 # Comandos docker Composer
 
--docker-compose --version
--docker-compose up
+- docker-compose --version
+- docker-compose down
+- docker-compose up
+- docker-compose up --force-recreate
 
 <!-- ficar sempre executando -->
 
--docker-compose up -d
+- docker-compose up -d
+- docker-compose up --force-recreate -d
 
 # Typeorm
 
